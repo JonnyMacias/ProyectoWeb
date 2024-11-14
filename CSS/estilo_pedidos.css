@@ -1,0 +1,71 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.container{
+    background-color: rgb(211, 209, 209);
+    width: 90%;
+    margin: 20px auto;
+    padding-bottom: 20px;
+}
+.search{
+    border: 2px solid rgb(194, 192, 192);
+    width: 70%;
+    margin: 20px auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.search input{
+    width: 100%;
+    height: 40px;
+    margin-right: 20px;
+    padding-left: 15px;
+    font-size: 1.1rem;
+    border: 2px solid rgb(211, 209, 209);
+    border-radius: 10PX;
+}
+.search img{
+    background-color: rgb(0, 162, 255);
+    width: 40px;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.tabla{
+    margin: 30px;
+    width: 100%;
+    max-height: 500px;
+    overflow: auto;
+    
+}
+.tabla table{
+    width: 90%;
+    border-collapse: collapse;
+}
+
+.tabla tr{
+    font-size: 17px;
+}
+.tabla_header{
+    position: sticky;
+    top:0;
+    z-index: 10;
+}
+.tabla tr img{
+    cursor: pointer;
+    width: 30px;
+}
+.tabla tr:nth-child(odd) {
+    height: 50px;
+    background-color: rgb(211, 209, 209); /* Color para filas impares */
+}
+
+table tr:nth-child(even) {
+    height: 50px;
+    background-color: #ffffff; /* Color para filas pares */
+}
