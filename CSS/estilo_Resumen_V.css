@@ -53,7 +53,7 @@
     border: 2px solid rgb(0, 162, 255);
     border-radius: 15px;
     padding: 5px;
-    width: 40px;
+    width: 35px;
     cursor: pointer;
 }
 
@@ -75,6 +75,7 @@
     margin-top: 50px;
 }
 #lineChart {
+    padding: 20px;
     width: 70%;
     background-color: #ffffff;
     margin: 20px auto;
