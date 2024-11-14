@@ -1,5 +1,4 @@
 *{
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
@@ -14,6 +13,7 @@
     justify-content: center;
     align-items: center;
     width: 30%;
+    border-right: 2px solid rgb(0, 162, 255);
 }
 .contIzquierdo img{
     margin-top: 100px;
@@ -36,6 +36,7 @@
     margin-right: 5px;  
     padding: 10px;
     font-size: 16px;    
+    width: 100%;
     border: 2px solid #4a90e2;
     border-radius: 5px;
     color: #4a90e2;
@@ -57,6 +58,70 @@
 }
 
 #pieChart {
-    width: 60%;
     margin: 20px auto;
+}
+
+/*-------------------------lado Dereecho--------------------*/
+.contDerecho{
+    width: 70%;
+    background-color: rgb(211, 209, 209);
+    display: flex;
+    flex-direction: column;
+}
+.container_grafica{
+    height: 60%;
+}
+.container_grafica h2{
+    margin-top: 50px;
+}
+#lineChart {
+    width: 70%;
+    background-color: #ffffff;
+    margin: 20px auto;
+}
+.container_datos{
+    height: 40%;
+}
+
+.container_datos_iz{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 90%;
+    margin: 20px auto;
+}
+.item_Info{
+    text-align: center;
+    padding: 10px;
+    background-color: #ffffff;
+    width: 30%;
+    height: 200px;
+    border-radius: 20px;
+    margin: 20px;
+    
+}
+.item_Info img{
+    margin: 20px;
+    width: 80px;
+}
+.item_Pedidos{
+    text-align: center;
+    background-color: #ffffff;
+    width: 30%;
+    height: 250px;
+    border-radius: 20px;
+    margin: 20px;
+}
+.item_Pedidos img{
+    width: 70px;
+}
+.item_Pedidos ul{
+    margin-top: 30PX;
+    text-align: start;
+    list-style: none;
+}
+.item_Pedidos ul img{
+    width: 25px;
+    margin: 0 15px;
 }
