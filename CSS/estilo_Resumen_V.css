@@ -1,0 +1,62 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.containerRV{
+    display: flex;
+    background-color: rgb(211, 209, 209);
+    width: 100%;
+}
+.contIzquierdo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+}
+.contIzquierdo img{
+    margin-top: 100px;
+    width: 100px;
+}
+.contIzquierdo h2{
+    margin: 20px;
+}
+.contIzquierdo h3{
+    margin:20px;
+    margin-top: 50px;
+}
+.calendario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calendar-button {
+    margin-right: 5px;  
+    padding: 10px;
+    font-size: 16px;    
+    border: 2px solid #4a90e2;
+    border-radius: 5px;
+    color: #4a90e2;
+    cursor: pointer;
+    background-color: #ffffff;
+}
+.calendar-button:hover {
+    background-color: #e0f3ff;
+}
+.calendario img{
+    display: block;
+    margin: auto 0;
+    background-color: #ffffff;
+    border: 2px solid rgb(0, 162, 255);
+    border-radius: 15px;
+    padding: 5px;
+    width: 40px;
+    cursor: pointer;
+}
+
+#pieChart {
+    width: 60%;
+    margin: 20px auto;
+}
