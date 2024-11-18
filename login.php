@@ -1,3 +1,12 @@
+<?php
+session_start();
+$error = '';
+if (isset($_SESSION['error'])) {
+    $error = $_SESSION['error'];
+    unset($_SESSION['error']); // Limpiar el error después de mostrarlo
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,15 +18,18 @@
 </head>
 <body>
     <div class = "wrapper">
-        <form action="">
+        <form action="validar.php" method="post">
             <h1>Login</h1>
+            <?php if ($error): ?>
+                <p class="error-message"><?= $error ?></p>
+            <?php endif; ?>
             <div class="input-box">
-                <input type="text" placeholder="Username" required>
+                <input type="text" placeholder="Username" name="usuario" required>
                 <i class='bx bxs-user'></i>
             </div>
 
             <div class="input-box">
-                <input type="password" placeholder="Password" required>
+                <input type="password" placeholder="Password" name="contraseña" required>
                 <i class='bx bxs-lock-alt'></i>
             </div>
 
