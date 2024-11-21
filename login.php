@@ -6,7 +6,6 @@ if (isset($_SESSION['error'])) {
     unset($_SESSION['error']); // Limpiar el error después de mostrarlo
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,10 +39,6 @@ if (isset($_SESSION['error'])) {
             </div>
 
             <button type="submit" class="btn">Login</button>
-
-            <div class="register-link">
-                <p>¿No tienes una cuenta? <a href="#">Registrarse</a></p>
-            </div>
         </form>
     </div>
 </body>

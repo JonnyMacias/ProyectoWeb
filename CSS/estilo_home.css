@@ -16,6 +16,13 @@ header{
     padding: 25px 0;
 }
 
+nav {
+    display: flex;
+    justify-content: space-between; /* Distribuye los elementos a los extremos */
+    align-items: center; /* Alinea los elementos verticalmente */
+    padding: 0 20px; /* Ajusta el espacio alrededor del contenido del nav */
+}
+
 nav a{
     display: inline-block;
     text-decoration: none;
@@ -48,4 +55,18 @@ nav a:hover{
 .encabezado-img h1{
     font-size: 50px;
     padding: 20px 0;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-icon i{
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
 }
