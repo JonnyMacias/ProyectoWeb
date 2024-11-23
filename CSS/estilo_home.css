@@ -1,13 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Open Sans';
 }
 
 body{
     font-family: 'Open Sans';
+    background-size: cover;
 }
 
 header{
@@ -21,21 +23,15 @@ nav {
     justify-content: space-between; /* Distribuye los elementos a los extremos */
     align-items: center; /* Alinea los elementos verticalmente */
     padding: 0 20px; /* Ajusta el espacio alrededor del contenido del nav */
+    max-width: 900px;
+	margin: auto;
+	background-color: #333;
+	font-size: 20px;
+	margin-top: 50px;
 }
 
-nav a{
-    display: inline-block;
-    text-decoration: none;
-    color: #696969;
-    margin: 0 30px;
-    padding: 5px 15px;
-    border-radius: 30px;
-}
 
-nav a:hover{
-    background-color: cornflowerblue;
-    color: #fff;
-}
+
 
 .encabezado-img{
     background-image: url(../IMG/banner_home.jpg);
@@ -69,4 +65,46 @@ nav a:hover{
     top: 50%;
     transform: translateY(-50%);
     font-size: 20px;
+}
+.menu-horizontal{
+	list-style: none;
+	display: flex;
+	justify-content: space-around;
+}
+.menu-horizontal > li > a{
+	display: block;
+	padding: 15px 20px;
+	color: white;
+	text-decoration: none;
+}
+.menu-horizontal > li:hover{
+	background-color: red;
+}
+.menu-vertical{
+	position: absolute;
+	display: none;
+	list-style: none;
+	width: 200px;
+	background-color: rgba(0, 0, 0, .5);
+}
+.menu-horizontal li:hover .menu-vertical{
+	display: block;
+}
+.menu-vertical li:hover{
+	background-color: black;
+}
+
+.menu-vertical li a{
+	display: block;
+	color: white;
+	text-decoration: none;
+	padding: 15px 15px 15px 20px;
+}
+
+#html{
+	margin: auto;
+	padding: 20px;
+	max-width: 900px;
+	background: white;
+
 }
