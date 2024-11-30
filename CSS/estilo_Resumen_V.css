@@ -1,41 +1,43 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
-.containerRV{
+
+.containerRV {
     display: flex;
-    background-color: rgb(211, 209, 209);
+    background-color: rgb(0, 162, 255);
     width: 100%;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas más pequeñas */
 }
-.contIzquierdo{
+
+.contIzquierdo {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 30%;
-    border-right: 2px solid rgb(0, 162, 255);
+    border-right: 2px solid rgb(255, 255, 255);
 }
-.contIzquierdo img{
+
+.contIzquierdo img {
     margin-top: 100px;
     width: 100px;
 }
-.contIzquierdo h2{
+
+.contIzquierdo h2, .contIzquierdo h3 {
     margin: 20px;
 }
-.contIzquierdo h3{
-    margin:20px;
-    margin-top: 50px;
-}
-.calendario{
+
+.calendario {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .calendar-button {
-    margin-right: 5px;  
+    margin-right: 5px;
     padding: 10px;
-    font-size: 16px;    
+    font-size: 16px;
     width: 100%;
     border: 2px solid #4a90e2;
     border-radius: 5px;
@@ -43,10 +45,12 @@
     cursor: pointer;
     background-color: #ffffff;
 }
+
 .calendar-button:hover {
     background-color: #e0f3ff;
 }
-.calendario img{
+
+.calendario img {
     display: block;
     margin: auto 0;
     background-color: #ffffff;
@@ -61,30 +65,34 @@
     margin: 20px auto;
 }
 
-/*-------------------------lado Dereecho--------------------*/
-.contDerecho{
+/*-------------------------lado Derecho--------------------*/
+.contDerecho {
     width: 70%;
-    background-color: rgb(211, 209, 209);
+    background-color: rgb(0, 162, 255);
     display: flex;
     flex-direction: column;
 }
-.container_grafica{
+
+.container_grafica {
     height: 60%;
 }
-.container_grafica h2{
+
+.container_grafica h2 {
     margin-top: 50px;
 }
+
 #lineChart {
     padding: 20px;
     width: 70%;
     background-color: #ffffff;
     margin: 20px auto;
 }
-.container_datos{
+
+.container_datos {
     height: 40%;
 }
 
-.container_datos_iz{
+.container_datos_iz {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -92,7 +100,8 @@
     width: 90%;
     margin: 20px auto;
 }
-.item_Info{
+
+.item_Info {
     text-align: center;
     padding: 10px;
     background-color: #ffffff;
@@ -100,13 +109,14 @@
     height: 200px;
     border-radius: 20px;
     margin: 20px;
-    
 }
-.item_Info img{
+
+.item_Info img {
     margin: 20px;
     width: 80px;
 }
-.item_Pedidos{
+
+.item_Pedidos {
     text-align: center;
     background-color: #ffffff;
     width: 30%;
@@ -114,15 +124,63 @@
     border-radius: 20px;
     margin: 20px;
 }
-.item_Pedidos img{
+
+.item_Pedidos img {
     width: 70px;
 }
-.item_Pedidos ul{
-    margin-top: 30PX;
+
+.item_Pedidos ul {
+    margin-top: 30px;
     text-align: start;
     list-style: none;
 }
-.item_Pedidos ul img{
+
+.item_Pedidos ul img {
     width: 25px;
     margin: 0 15px;
+}
+
+/* Media Queries para hacer la página responsive */
+
+@media screen and (max-width: 1024px) {
+    .contIzquierdo, .contDerecho {
+        width: 100%; /* En pantallas más pequeñas, ambos contenedores ocupan todo el ancho */
+        border-right: none; /* Elimina el borde derecho cuando los elementos ocupan todo el ancho */
+    }
+    
+    .containerRV {
+        flex-direction: column; /* Coloca los contenedores uno debajo del otro en pantallas más pequeñas */
+    }
+
+    .container_grafica, .container_datos {
+        height: auto; /* Permite que las gráficas y los datos ajusten su altura */
+    }
+
+    .item_Info, .item_Pedidos {
+        width: 90%; /* Hace que los elementos ocupen un mayor ancho */
+        margin: 10px auto; /* Centra los elementos */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .contIzquierdo img {
+        width: 80px; /* Ajusta el tamaño de la imagen */
+    }
+
+    .calendar-button {
+        padding: 8px; /* Ajusta el tamaño del botón */
+        font-size: 14px; /* Ajusta el tamaño de la fuente */
+    }
+
+    .item_Info, .item_Pedidos {
+        width: 100%; /* En pantallas pequeñas, estos elementos ocuparán todo el ancho */
+    }
+
+    .item_Pedidos ul {
+        margin-top: 10px; /* Reduce el margen de la lista */
+    }
+
+    #pieChart {
+        width: 100%; /* Hace que el gráfico de pie ocupe todo el ancho */
+    }
 }

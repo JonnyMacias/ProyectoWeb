@@ -6,14 +6,16 @@
     <title>Document</title>
     <link rel="stylesheet" href="CSS/estilo_Resumen_V.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="CSS/estilo_home.css">
 </head>
 <body>
-    <nav style=" margin: 0;; padding: 0; background-color: rgb(0, 162, 255); width: 100%; height: 100px;">
+    <?php include 'CodigoReutilizable/encabezado.php'?>
+    <nav style=" margin: 0;; padding: 0; background-color: white; width: 100%; height: 100px;">
 
     </nav>
-    <div class="containerRV">
+    <div class="containerRV"> 
         <div class="contIzquierdo">
-            <img src="" alt="LOGO">
+            <img src="IMG/Edkena B.png" alt="LOGO">
             <h2>Estado de Ventas</h2>
             <div class="calendario">
                 <input type="date" id="calendar-input" class="calendar-button"> 

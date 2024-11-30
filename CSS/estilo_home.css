@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -7,7 +8,7 @@
     font-family: 'Open Sans';
 }
 
-body{
+body{  
     font-family: 'Open Sans';
     background-size: cover;
 }
@@ -28,6 +29,19 @@ nav {
 	background-color: #333;
 	font-size: 20px;
 	margin-top: 50px;
+}
+
+.contenido {
+    display: flex; /* Coloca el texto y la imagen en una fila */
+    gap: 100px; /* Espacio entre el texto y la imagen */
+}
+.contenido img {
+    width: 700px; /* Ajusta el tamaño de la imagen */
+    height: auto; /* Mantiene las proporciones de la imagen */
+}
+.contenido p {
+    max-width: 900px; /* Limita el ancho del texto */
+    text-align: justify; /* Justifica el texto */
 }
 
 
@@ -66,40 +80,73 @@ nav {
     transform: translateY(-50%);
     font-size: 20px;
 }
-.menu-horizontal{
-	list-style: none;
-	display: flex;
-	justify-content: space-around;
-}
-.menu-horizontal > li > a{
-	display: block;
-	padding: 15px 20px;
-	color: white;
-	text-decoration: none;
-}
-.menu-horizontal > li:hover{
-	background-color: red;
-}
-.menu-vertical{
-	position: absolute;
-	display: none;
-	list-style: none;
-	width: 200px;
-	background-color: rgba(0, 0, 0, .5);
-}
-.menu-horizontal li:hover .menu-vertical{
-	display: block;
-}
-.menu-vertical li:hover{
-	background-color: black;
+/*================MENU===============*/
+/* Menú horizontal */
+.menu-horizontal {
+    list-style: none;
+    display: flex;
+    justify-content: space-between; /* Espacio entre elementos */
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.3); /* Fondo transparente */
+    padding: 10px 20px;
+    position: fixed; /* Fijo en la parte superior */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
-.menu-vertical li a{
-	display: block;
-	color: white;
-	text-decoration: none;
-	padding: 15px 15px 15px 20px;
+/* Elementos del menú */
+.menu-horizontal > li > a {
+    display: block;
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
 }
+
+/* Efecto hover en elementos del menú */
+.menu-horizontal > li:hover {
+    background-color: rgba(0, 149, 255, 0.8); /* Rojo semi-transparente */
+}
+
+/* Submenú vertical */
+.menu-vertical {
+    position: absolute;
+    display: none;
+    list-style: none;
+    width: 200px;
+    background-color: rgba(0, 0, 0, 0.5);
+    
+}
+
+/* Mostrar submenú al hacer hover */
+.menu-horizontal li:hover .menu-vertical {
+    display: block;
+}
+
+/* Hover en elementos del submenú */
+.menu-vertical li:hover {
+    background-color: rgba(4, 233, 254, 0.8); /* Fondo negro opaco */
+}
+
+/* Enlaces del submenú */
+.menu-vertical li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+}
+
+/* Imagen pequeña a la izquierda */
+.logo {
+    height: 40px; /* Ajusta el tamaño de la imagen */
+    margin-right: 10px;
+}
+
+
+
+/*============================================*/
 
 #html{
 	margin: auto;
@@ -108,3 +155,28 @@ nav {
 	background: white;
 
 }
+
+/*SCROOL BAR*/
+/* Personaliza el fondo del scrollbar */
+::-webkit-scrollbar {
+    width: 20px; /* Ancho del scrollbar */
+    height: 10px; /* Altura del scrollbar horizontal */
+  }
+  
+  /* Color de fondo de la barra */
+  ::-webkit-scrollbar-track {
+    background: rgba(0, 149, 255, 0.8); /* Fondo gris claro */
+    border-radius: 5px; /* Bordes redondeados */
+  }
+  
+  /* Color del "thumb" (la parte que se arrastra) */
+  ::-webkit-scrollbar-thumb {
+    background: white; /* Azul */
+    border-radius: 5px; /* Bordes redondeados */
+  }
+  
+  /* Efecto hover en el thumb */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #d9dcdf; /* Azul más oscuro */
+  }
+  
