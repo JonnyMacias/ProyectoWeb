@@ -1,11 +1,77 @@
 <?php
-session_start();
-$error = '';
-if (isset($_SESSION['error'])) {
-    $error = $_SESSION['error'];
-    unset($_SESSION['error']); // Limpiar el error después de mostrarlo
-}
+    include_once 'database.php';
+
+    session_start();
+
+    if(isset($_SESSION['rol'])){
+        switch($_SESSION['rol']){
+            case 1:
+                header('location: administrador.php');
+            break;
+
+            case 2:
+                header('location: clientes.php');
+            break;
+
+            default:
+        }
+    }
+
+    if(isset($_POST['username']) && isset($_POST['password'])){
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+
+        $db = new Database();
+        $query = $db->connect()->prepare('SELECT*FROM usuarios WHERE username = :username AND password = :password');
+        $query->execute(['username' => $username, 'password' => $password]);
+
+        $row = $query->fetch(PDO::FETCH_NUM);
+        if($row == true){
+            // validar rol
+            $rol = $row[3];
+            $_SESSION['rol'] = $rol;
+
+            switch($_SESSION['rol']){
+                case 1:
+                    $username = 'Administrador';
+                    $usuarioValido = true; // Simulación de validación de credenciales
+                    if ($usuarioValido) {
+                        $_SESSION['username'] = $username; // Guarda el nombre de usuario en la sesión
+                        echo "Sesión iniciada correctamente. Usuario: " . $_SESSION['username'];
+                        header('location: administrador.php'); // Redirige al home
+                        exit();
+                    } else {
+                        echo "Credenciales inválidas.";
+                    }
+                    
+                break;
+    
+                case 2:
+                    $username = 'Clientes';
+                    $usuarioValido = true; // Simulación de validación de credenciales
+                    if ($usuarioValido) {
+                        $_SESSION['username'] = $username; // Guarda el nombre de usuario en la sesión
+                        echo "Sesión iniciada correctamente. Usuario: " . $_SESSION['username'];
+                        header('location: clientes.php'); // Redirige al home
+                        exit();
+                    } else {
+                        echo "Credenciales inválidas.";
+                    }
+                break;
+    
+                default:
+            }
+
+            
+        }else{
+            // no existe el usuario
+            echo "El usuario o contraseña son incorrectos";
+        }
+
+    }
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,20 +83,16 @@ if (isset($_SESSION['error'])) {
 </head>
 <body>
     <div class = "wrapper">
-        <form action="validar.php" method="post">
+        <form action="#" method="POST">
             <h1>Login</h1>
-            <?php if ($error): ?>
-                <p class="error-message"><?= $error ?></p>
-            <?php endif; ?>
             <div class="input-box">
-                <input type="text" placeholder="Usuario" name="usuario" required>
+                <input type="text" placeholder="Usuario" name="username">
                 <i class='bx bxs-user'></i>
             </div>
 
             <div class="input-box">
-                <input type="password" placeholder="Contraseña" name="contraseña" required>
+                <input type="text" placeholder="Contraseña" name="password">
                 <i class='bx bxs-lock-alt'></i>
-                
             </div>
 
             <div class="remember-forgot">
@@ -38,7 +100,7 @@ if (isset($_SESSION['error'])) {
                 <a href="#">¿Olvidaste tu contraseña?</a>
             </div>
 
-            <button type="submit" class="btn">Login</button>
+            <input type="submit" class="btn" value="Login">
         </form>
     </div>
 </body>

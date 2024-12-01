@@ -1,3 +1,12 @@
+<?php
+
+if (isset($_SESSION['username'])) {
+    echo "La sesión está activa. Usuario: " . $_SESSION['username'];
+} else {
+    echo "No hay sesión activa.";
+}
+?>
+
 <header>
             <nav>
             <ul class="menu-horizontal"> 
@@ -47,17 +56,26 @@
                     <li><a href="vis">Visión</a></li>
                     <li><a href="#">Valores</a></li>
                     <li><a href="#">Contacto</a></li>
-                    <li><?php if (isset($_SESSION['usuario'])): ?>
-                    <div class="user-info">
-                        <i class='bx bxs-user'></i>
-                        <span><?php echo htmlspecialchars($_SESSION['usuario']); ?></span>
-                    </div>
-                <?php else: ?>
-                    <a href="login.php">
-                      <img src="IMG/usuario.png" alt="Icono de usuario" style="width: 50px; height: 50px; vertical-align: middle;"> 
-                              Inicie sesión
-                    </a>
-                <?php endif; ?></li>
+                    <li>
+                        <?php if (isset($_SESSION['username'])): ?>
+                            <div class="user-info">
+                                <i class='bx bxs-user'></i>
+                                <span><?php echo htmlspecialchars($_SESSION['username']); ?></span> <!-- Muestra el username -->
+                            </div>
+                            <form action="cerrar_sesion.php" method="POST">
+                                <button type="submit">Cerrar sesión</button>
+                            </form>
+                        <?php else: ?>
+                            <a href="login.php">
+                                <img src="IMG/usuario.png" alt="Icono de usuario" style="width: 50px; height: 50px; vertical-align: middle;">
+                                Inicie sesión
+                            </a>
+                            <form action="cerrar_sesion.php" method="POST">
+                                <input type="submit" value="Cerrar sesion">
+                            </form>
+                        <?php endif; ?>
+                    </li>
+
                 </ul>
                 
             </nav>

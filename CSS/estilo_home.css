@@ -44,12 +44,9 @@ nav {
     text-align: justify; /* Justifica el texto */
 }
 
-
-
-
 .encabezado-img{
     background-image: url(../IMG/banner_home.jpg);
-    height: 400px;
+    height: 40px;
     background-size: contain;
     display: flex;
     flex-direction: column;
@@ -179,4 +176,3 @@ nav {
   ::-webkit-scrollbar-thumb:hover {
     background: #d9dcdf; /* Azul más oscuro */
   }
-  
