@@ -1,5 +1,20 @@
 <?php
+
     session_start();
+
+    if(!isset($_SESSION['rol'])){
+        header('location: login.php');
+    }else{
+        if($_SESSION['rol'] != 2){
+            header('location: login.php');
+        }
+    }
+
+    if (isset($_SESSION['username'])) {
+        echo "La sesión está activa. Usuario: " . $_SESSION['username'];
+    } else {
+        echo "No hay sesión activa.";
+    }
 ?>
 
 <!DOCTYPE html>
@@ -26,6 +41,9 @@
         <div class="user-info">
             <img src="user-icon.png" alt="User Icon" width="30">
             <span>Eduardo Ponce</span>
+            <form action="cerrar_sesion.php" method="POST">
+                <input type="submit" value="Cerrar sesion">
+            </form>
         </div>
     </div>
 
