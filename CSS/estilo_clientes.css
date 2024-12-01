@@ -109,3 +109,50 @@ h1 {
     height: 25px;
     cursor: pointer;
 }
+/* Ventana Modal */
+.VentanaModal {
+    display: none; /* Oculta el modal por defecto */
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.VentanaModal.active {
+    display: flex; /* Muestra el modal */
+}
+
+.contenidoModal {
+    width: 90%;
+    max-width: 400px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.contenidoModal h2 {
+    margin-bottom: 15px;
+}
+
+.contenidoModal p {
+    margin: 20px 0;
+}
+
+.btn-cerrar button {
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-cerrar button:hover {
+    background-color: #0056b3;
+}
