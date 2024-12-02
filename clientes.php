@@ -1,21 +1,26 @@
 <?php
+session_start();
 
-    session_start();
-
-    if(!isset($_SESSION['rol'])){
+// Verifica si la sesión está activa
+if (!isset($_SESSION['rol'])) {
+    header('location: login.php');
+    exit();
+} else {
+    // Permite acceso solo si el rol es 1 (Administrador) o 2 (Cliente)
+    if ($_SESSION['rol'] != 1 && $_SESSION['rol'] != 2) {
         header('location: login.php');
-    }else{
-        if($_SESSION['rol'] != 2){
-            header('location: login.php');
-        }
+        exit();
     }
+}
 
-    if (isset($_SESSION['username'])) {
-        echo "La sesión está activa. Usuario: " . $_SESSION['username'];
-    } else {
-        echo "No hay sesión activa.";
-    }
+// Muestra información del usuario si la sesión está activa
+if (isset($_SESSION['username'])) {
+    echo "La sesión está activa. Usuario: " . htmlspecialchars($_SESSION['username']);
+} else {
+    echo "No hay sesión activa.";
+}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
