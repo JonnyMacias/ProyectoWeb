@@ -84,7 +84,7 @@ nav {
     display: flex;
     justify-content: space-between; /* Espacio entre elementos */
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.3); /* Fondo transparente */
+    background-color: rgba(0, 149, 255, 0.8); /* Fondo transparente */
     padding: 10px 20px;
     position: fixed; /* Fijo en la parte superior */
     top: 0;

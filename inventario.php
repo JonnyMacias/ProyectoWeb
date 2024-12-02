@@ -13,13 +13,15 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/alertify.min.css"/>
     <!-- Default theme -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/themes/default.min.css"/>
-    <link rel="stylesheet" href="inventario/style.css?v=2">
+    <link rel="stylesheet" href="inventario/stilo.css">
+    <link rel="stylesheet" href="CSS/estilo_home.css">
+
 
     <title>Inventario</title>
 
 </head>
 <body>
-<div class="titulo"><h1>Productos</h1></div>
+<?php  include 'CodigoReutilizable/encabezado.php'?>
   <div class="container mt-4 shadow-lg p-3 mb-5 bg-body rounded">
      <button id= "btnCrear" type="button" class="btn btn-primary" data-bs-toggle="modal" >Nuevo Producto</button>
       <table id="tablaClientes" class="table mt-2 table-bordered table-striped">
@@ -66,8 +68,8 @@
             <label for="imagen" class="col-form-label">Imagen:</label>
             <input id="imagen" type="text" class="form-control" >
           </div>
+          
 
-        
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

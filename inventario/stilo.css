@@ -1,0 +1,83 @@
+/* Estilo para el título */
+.titulo {
+    background-color: #0066cc;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 1.5rem;
+}
+
+/* Tabla */
+.table {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+}
+
+.table th {
+    background-color: #0066cc;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.table td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* Botones de acción */
+.btn-primary {
+    margin-bottom: 20px;
+}
+
+/* Estilo del modal */
+.modal-header {
+    background-color: #0066cc;
+    color: white;
+}
+
+.modal-title {
+    font-weight: bold;
+}
+
+/* Fondo del contenedor */
+.container {
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+/* Encabezado de la página */
+.navbar {
+    background-color: #0066cc;
+    padding: 10px;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+/* Iconos y usuario */
+.iconos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.iconos img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.user {
+    font-weight: bold;
+}

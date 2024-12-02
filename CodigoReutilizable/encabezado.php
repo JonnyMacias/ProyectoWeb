@@ -52,8 +52,8 @@ if (isset($_SESSION['username'])) {
                             </ul>
 
                 </li>
-                    <li><a href="#mis">Misión</a></li>
-                    <li><a href="vis">Visión</a></li>
+                    <li><a href="home.php#mis">Misión</a></li>
+                    <li><a href="home.php#vis">Visión</a></li>
                     <li><a href="#">Valores</a></li>
                     <li><a href="#">Contacto</a></li>
                     <li>
@@ -63,7 +63,7 @@ if (isset($_SESSION['username'])) {
                                 <span><?php echo htmlspecialchars($_SESSION['username']); ?></span> <!-- Muestra el username -->
                             </div>
                             <form action="cerrar_sesion.php" method="POST">
-                                <button type="submit">Cerrar sesión</button>
+                                
                             </form>
                         <?php else: ?>
                             <a href="login.php">
@@ -71,7 +71,7 @@ if (isset($_SESSION['username'])) {
                                 Inicie sesión
                             </a>
                             <form action="cerrar_sesion.php" method="POST">
-                                <input type="submit" value="Cerrar sesion">
+                                
                             </form>
                         <?php endif; ?>
                     </li>

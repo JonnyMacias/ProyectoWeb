@@ -33,7 +33,8 @@ const mostrar = (productos) => {
                             <td>${producto.nombre}</td>
                             <td>${producto.precio}</td>
                             <td>${producto.stock}</td>
-                            <td class="text-center"><a class="btnEditar btn btn-primary">Editar</a><a class="btnBorrar btn btn-danger">Borrar</a></td>
+                            <td class="text-center"><a class="btnEditar "> <img src="https://cdn-icons-png.flaticon.com/512/10608/10608888.png" alt="Editar" title="Editar" width="40" height="40">
+                            </a><a class="btnBorrar "><img src="https://cdn-icons-png.freepik.com/512/12313/12313511.png" alt="Eliminar" title="Eliminar"  width="40" height="40"></a></td>
                        </tr>
                     `    
     })
@@ -90,8 +91,9 @@ on(document, 'click', '.btnEditar', e => {
     const nombreForm = fila.children[1].innerHTML
     const descripcionForm = fila.children[2].innerHTML
     const precioForm = fila.children[3].innerHTML
-    const imagenForm = fila.children[5].innerHTML
     const stockForm = fila.children[4].innerHTML
+    const imagenForm = fila.children[5].innerHTML
+
     nombre.value =  nombreForm
     descripcion.value =  descripcionForm
     precio.value =  precioForm
@@ -137,6 +139,7 @@ formProducto.addEventListener('submit', (e)=>{
                 'Content-Type':'application/json'
             },
             body: JSON.stringify({
+
                 nombre:nombre.value,
                 descripcion:descripcion.value,
                 precio:precio.value,
