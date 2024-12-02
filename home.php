@@ -313,3 +313,4 @@
 
 
         <!--CODIGO PIE DE PAGINA -->
+        <?php  include 'CodigoReutilizable/piepagina.php'?>

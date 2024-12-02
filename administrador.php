@@ -32,8 +32,8 @@
 
         <div class="cont-menu active" id="menu">
             <ul>
-                <li><a href="#mis">Misión</a></li>
-                <li><a href="vis">Visión</a></li>
+                <li><a href="clientes.php">Clientes</a></li>
+                <li><a href="#vis">Visión</a></li>
                 <li><a href="#">Valores</a></li>
                 <li><a href="#">Contacto</a></li>
                 <li>
@@ -320,3 +320,4 @@
 
 
         <!--CODIGO PIE DE PAGINA -->
+        <?php  include 'CodigoReutilizable/piepagina.php'?>
