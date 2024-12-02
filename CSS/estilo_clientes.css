@@ -69,6 +69,7 @@ h1 {
 }
 
 .search-bar button {
+    margin-left: 5px;
     padding: 10px 15px;
     background-color: #007BFF;
     color: white;
@@ -109,7 +110,127 @@ h1 {
     height: 25px;
     cursor: pointer;
 }
+/* Ventana Modal Agregar Cliente */
 /* Ventana Modal */
+.VentanaModal {
+    display: none; /* Oculta el modal por defecto */
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.VentanaModal.active {
+    display: flex; /* Muestra el modal */
+}
+
+.contenidoModal {
+    width: 90%;
+    max-width: 450px; /* Ancho máximo del modal */
+    background: #ffffff;
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    animation: slide-down 0.3s ease-out; /* Animación al abrir */
+    overflow-y: auto; /* Permite desplazamiento si hay mucho contenido */
+}
+
+/* Animación del modal */
+@keyframes slide-down {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Encabezado del modal */
+.contenidoModal h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Estilo del formulario */
+#add-client-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaciado entre campos */
+}
+
+/* Etiquetas del formulario */
+#add-client-form label {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Campos de entrada */
+#add-client-form input[type="text"],
+#add-client-form input[type="email"] {
+    width: 100%; /* Ajuste responsivo */
+    padding: 10px;
+    font-size: 0.9rem;
+    color: #333;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+}
+
+#add-client-form input[type="text"]:focus,
+#add-client-form input[type="email"]:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+/* Botón de guardar */
+#add-client-form button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+#add-client-form button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Botón de cerrar */
+.btn-cerrar button {
+    margin-top: 15px;
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    background-color: #d9534f; /* Color rojo para cerrar */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-cerrar button:hover {
+    background-color: #c9302c;
+}
+
+/* Ventana Modal INFO */
 .VentanaModal {
     display: none; /* Oculta el modal por defecto */
     width: 100%;
@@ -154,5 +275,78 @@ h1 {
 }
 
 .btn-cerrar button:hover {
+    background-color: #0056b3;
+}
+/* Ventana MODAL de Formulario Editar */
+/* Título del modal */
+#modal h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Contenedor del formulario */
+#edit-form {
+    display: flex; /* Cambia a flex para control de distribución */
+    flex-wrap: wrap; /* Permite que los elementos bajen si son largos */
+    gap: 10px; /* Espaciado entre campos */
+    justify-content: space-between; /* Distribución de espacio */
+}
+
+/* Campos de entrada */
+#edit-form input[type="text"],
+#edit-form input[type="email"] {
+    width: calc(45%); /* Reduce el ancho para que los inputs sean pequeños */
+    background-color: #f2f2f2;
+    border: 1px solid #ccc; /* Añade un borde ligero */
+    border-radius: 5px;
+    padding: 5px; /* Reduce el padding interno */
+    font-size: 0.9rem; /* Reduce el tamaño del texto */
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1); /* Suaviza los bordes */
+}
+
+/* Ajuste de labels para alineación */
+#edit-form label {
+    width: 100%; /* Cada label toma todo el ancho disponible */
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 5px; /* Espacio entre el label y el input */
+}
+
+/* Botón de guardar cambios */
+#save-changes {
+    width: 100%;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+#save-changes:hover {
+    background-color: #45a049;
+}
+
+#close-modal {
+    top: 15px;
+    right: 15px;
+    font-size: 1.2rem;
+}
+
+/* Ventana MODAL ELIMINAR */
+
+.btn-eliminar button {
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.btn-eliminar button:hover {
     background-color: #0056b3;
 }
