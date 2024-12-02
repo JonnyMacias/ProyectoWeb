@@ -148,3 +148,4 @@ include 'db.php';
 
 
         <!--CODIGO PIE DE PAGINA -->
+        <?php include 'CodigoReutilizable/piepagina.php'?>
