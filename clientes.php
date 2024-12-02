@@ -36,10 +36,10 @@ if (isset($_SESSION['username'])) {
     <div class="header">
         <div class="nav-links">
             <img id="LogoEDKENA" src="IMAGENES/Edkena B.png" alt="LogoEDKENA" width="30">
-            <a href="#">Productos</a>
-            <a href="#">Misión</a>
-            <a href="#">Visión</a>
-            <a href="#">Valores</a>
+            <a href="home.php">Productos</a>
+            <a href="home.php">Misión</a>
+            <a href="home.php">Visión</a>
+            <a href="home.php">Valores</a>
         </div>
         <div class="user-info">
             <img src="user-icon.png" alt="User Icon" width="30">
