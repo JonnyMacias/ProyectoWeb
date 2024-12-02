@@ -82,5 +82,17 @@ if (isset($_SESSION['username'])) {
             </tbody>
         </table>
     </div>
+        <!-- Ventana Modal Información del Cliente  -->
+        <div class="VentanaModal" id="modal">
+        <div class="contenidoModal">
+            <h2>Detalles del Cliente</h2>
+            <p id="client-details">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et, provident!</p>
+            <div class="btn-cerrar">
+                <button id="close-modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="JS/clientes.js"></script>
 </body>
 </html>
