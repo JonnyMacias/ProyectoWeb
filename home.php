@@ -16,8 +16,15 @@
         <link rel="stylesheet" href="CSS/estilo_menu.css">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
+        <?php
+ 
+include 'db.php';
+
+
+?>
     </head>
     <body>
+
         <!--CODIGO DEL MENU -->
         <div class="icono-menu">
             <img src="../ProyectoWeb/IMG/lista.png" id="icono-menu">
@@ -64,17 +71,25 @@
 
         <!--Aqui va el resto del codigo que quieres agregar en la pagina -->
         <section class="container">
+        <?php
+        $sentecia=$pdo->prepare("SELECT * FROM productos");
+        $sentecia->execute();
+        $listaProductos=$sentecia->fetchAll(PDO::FETCH_ASSOC);
+        //print_r($listaProductos);
+        
+        ?>
          <h2 class="container__title">Nuestros Productos</h2>
 
          <div class="card__container">
+         <?php  foreach ($listaProductos as $producto){?>
             <article>
                <!-- CARD PRODUCT -->
                <div class="card__product">
-                  <img src="IMG/img_product/contenedores/c1.jpg" alt="image" class="card__img">
+                  <img src="<?php echo $producto['imagen'];?>" alt="image" class="card__img">
    
                   <div>
-                     <h3 class="card__name">CONTENEDOR</h3>
-                     <span class="card__price"></span>
+                     <h3 class="card__name"><?php echo $producto['nombre'];?></h3>
+                     <span class="card__price">$<?php echo $producto['precio'];?></span>
                   </div>
                </div>
 
@@ -83,16 +98,12 @@
                   <div class="modal__card">
                      <i class="ri-close-large-line modal__close"></i>
 
-                     <img src="IMG/img_product/contenedores/c1.jpg" alt="image" class="modal__img">
+                     <img src="<?php echo $producto['imagen'];?>" alt="image" class="modal__img">
 
                      <div>
-                        <h3 class="modal__name">CONTENEDOR</h3>
-                        <p class="modal__info">
-                        Contenedores con tarima de madera o tarima de cartón, diseñados
-                         tomando en cuenta las necesidades de conservación del producto y 
-                         la ergonomía en su uso.
-                        </p>
-                        <span class="modal__price"></span>
+                        <h3 class="modal__name"><?php echo $producto['nombre'];?></h3>
+                        <p class="modal__info"><?php echo $producto['descripcion'];?></p>
+                        <span class="modal__price">$<?php echo $producto['precio'];?></span>
                      </div>
 
                      <div class="modal__buttons">
@@ -102,183 +113,7 @@
                   </div>
                </div>
             </article>
-
-            <article>
-               <!-- CARD PRODUCT -->
-               <div class="card__product">
-                  <img src="IMG/img_product/separadores/s4.jpg" alt="image" class="card__img">
-   
-                  <div>
-                     <h3 class="card__name">SEPARADORES/REJILLAS</h3>
-                     <span class="card__price">--</span>
-                  </div>
-               </div>
-
-               <!-- POPUP MODAL -->
-               <div class="modal">
-                  <div class="modal__card">
-                     <i class="ri-close-large-line modal__close"></i>
-
-                     <img src="IMG/img_product/separadores/s4.jpg" alt="image" class="modal__img">
-
-                     <div>
-                        <h3 class="modal__name">SEPARADORES/REJILLAS</h3>
-                        <p class="modal__info">
-                        Diseñados de acuerdo a las dimensiones de las piezas, pueden llevar diferentes acabados 
-                        de acuerdo a los requerimientos del envío.
-                        </p>
-                        <span class="modal__price">--</span>
-                     </div>
-
-                     <div class="modal__buttons">
-                        <button class="modal__button modal__button-ghost">Buy Now</button>
-                        <button class="modal__button">Add to Cart</button>
-                     </div>
-                  </div>
-               </div>
-            </article>
-
-            <article>
-               <!-- CARD PRODUCT -->
-                <div class="card__product">
-                   <img src="IMG/img_product/diseño/d2.jpg" alt="image" class="card__img">
-    
-                   <div>
-                      <h3 class="card__name">DISEÑO INTERNO</h3>
-                      <span class="card__price">$59</span>
-                   </div>
-                </div>
-
-               <!-- POPUP MODAL -->
-               <div class="modal">
-                  <div class="modal__card">
-                     <i class="ri-close-large-line modal__close"></i>
-
-                     <img src="IMG/img_product/diseño/d2.jpg" alt="image" class="modal__img">
-
-                     <div>
-                        <h3 class="modal__name">DISEÑO INTERNO</h3>
-                        <p class="modal__info">
-                        Se pueden realizar los diseños internos más diversos, en diferentes resistencias 
-                        y formas, con el propósito de inmovilizar la pieza asegurándose de que la integridad de
-                         la pieza sea el principal objetivo.
-                        </p>
-                        <span class="modal__price">--</span>
-                     </div>
-
-                     <div class="modal__buttons">
-                        <button class="modal__button modal__button-ghost">Buy Now</button>
-                        <button class="modal__button">Add to Cart</button>
-                     </div>
-                  </div>
-               </div>
-            </article>
-
-            <article>
-               <!-- CARD PRODUCT -->
-                <div class="card__product">
-                   <img src="IMG/img_product/troqueladas/t2.jpg" alt="image" class="card__img">
-    
-                   <div>
-                      <h3 class="card__name">TROQUELEADAS</h3>
-                      <span class="card__price">$--</span>
-                   </div>
-                </div>
-
-               <!-- POPUP MODAL -->
-               <div class="modal">
-                  <div class="modal__card">
-                     <i class="ri-close-large-line modal__close"></i>
-
-                     <img src="IMG/img_product/troqueladas/t2.jpg" alt="image" class="modal__img">
-
-                     <div>
-                        <h3 class="modal__name">TROQUELEADAS</h3>
-                        <p class="modal__info">
-                        Cajas troqueladas con diseños específicos de 
-                        acuerdo a necesidades de producto.
-                        </p>
-                        <span class="modal__price">$--</span>
-                     </div>
-
-                     <div class="modal__buttons">
-                        <button class="modal__button modal__button-ghost">Buy Now</button>
-                        <button class="modal__button">Add to Cart</button>
-                     </div>
-                  </div>
-               </div>
-            </article>
-
-            <article>
-               <!-- CARD PRODUCT -->
-                <div class="card__product">
-                   <img src="IMG/img_product/cartonm/cm2.jpg" alt="image" class="card__img">
-    
-                   <div>
-                      <h3 class="card__name">CARTÓN CON MICHELMAN</h3>
-                      <span class="card__price">$--</span>
-                   </div>
-                </div>
-
-               <!-- POPUP MODAL -->
-               <div class="modal">
-                  <div class="modal__card">
-                     <i class="ri-close-large-line modal__close"></i>
-
-                     <img src="IMG/img_product/cartonm/cm2.jpg" alt="image" class="modal__img">
-
-                     <div>
-                        <h3 class="modal__name">CARTÓN CON MICHELMAN</h3>
-                        <p class="modal__info">
-                            Uso: El michelman es un recubrimiento que actúa 
-                            como retardante a la humedad
-                        </p>
-                        <span class="modal__price">$--</span>
-                     </div>
-
-                     <div class="modal__buttons">
-                        <button class="modal__button modal__button-ghost">Buy Now</button>
-                        <button class="modal__button">Add to Cart</button>
-                     </div>
-                  </div>
-               </div>
-            </article>
-
-            <article>
-               <!-- CARD PRODUCT -->
-                <div class="card__product">
-                   <img src="IMG/img_product/plastico/p3.jpg" alt="image" class="card__img">
-    
-                   <div>
-                      <h3 class="card__name">PLÁSTICO CORRUGADO</h3>
-                      <span class="card__price">$--</span>
-                   </div>
-                </div>
-
-               <!-- POPUP MODAL -->
-               <div class="modal">
-                  <div class="modal__card">
-                     <i class="ri-close-large-line modal__close"></i>
-
-                     <img src="IMG/img_product/plastico/p3.jpg" alt="image" class="modal__img">
-
-                     <div>
-                        <h3 class="modal__name">PLÁSTICO CORRUGADO</h3>
-                        <p class="modal__info">
-                        Para empaques retornables se cuenta con el plástico corrugado en 
-                        calibre desde 3 a 10mm y en diversos colores. Al cuál se le pueden 
-                        colocar hole-hands y esquineros apilables según sea el caso.
-                        </p>
-                        <span class="modal__price">$--</span>
-                     </div>
-
-                     <div class="modal__buttons">
-                        <button class="modal__button modal__button-ghost">Buy Now</button>
-                        <button class="modal__button">Add to Cart</button>
-                     </div>
-                  </div>
-               </div>
-            </article>
+            <?php }  ?>
          </div>
       </section>
 
@@ -313,4 +148,4 @@
 
 
         <!--CODIGO PIE DE PAGINA -->
-        <?php  include 'CodigoReutilizable/piepagina.php'?>
+        <?php include 'CodigoReutilizable/piepagina.php'?>
