@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "pro_web"; // Reemplaza con el nombre de tu base de datos
+$dbname = "edkena"; // Reemplaza con el nombre de tu base de datos
 
 // Crear la conexión
 $conn = new mysqli($servername, $username, $password, $dbname);

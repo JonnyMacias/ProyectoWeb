@@ -1,3 +1,4 @@
+
 <?php
     session_start();
 ?>
@@ -22,6 +23,7 @@
 </head>
 <body>
 <?php  include 'CodigoReutilizable/encabezado.php'?>
+
   <div class="container mt-4 shadow-lg p-3 mb-5 bg-body rounded">
      <button id= "btnCrear" type="button" class="btn btn-primary" data-bs-toggle="modal" >Nuevo Producto</button>
       <table id="tablaClientes" class="table mt-2 table-bordered table-striped">

@@ -1,4 +1,4 @@
-//Definición de variables
+/*//Definición de variables
 const url = 'http://localhost:3000/api/producto/'
 const contenedor = document.querySelector('tbody')
 let resultados = ''
@@ -33,8 +33,8 @@ const mostrar = (productos) => {
                             <td>${producto.nombre}</td>
                             <td>${producto.precio}</td>
                             <td>${producto.stock}</td>
-                            <td class="text-center"><a class="btnEditar "> <img src="https://cdn-icons-png.flaticon.com/512/10608/10608888.png" alt="Editar" title="Editar" width="40" height="40">
-                            </a><a class="btnBorrar "><img src="https://cdn-icons-png.freepik.com/512/12313/12313511.png" alt="Eliminar" title="Eliminar"  width="40" height="40"></a></td>
+                            <td class="text-center"><a class="btnEditar"> <img src="https://cdn-icons-png.freepik.com/512/12313/12313511.png" alt="Editar" title="Editar" width="40" height="40">
+                            </a><a class="btnBorrar "><img src="  https://cdn-icons-png.flaticon.com/512/10608/10608888.png" alt="Eliminar" title="Eliminar"  width="40" height="40"></a></td>
                        </tr>
                     `    
     })
@@ -139,7 +139,6 @@ formProducto.addEventListener('submit', (e)=>{
                 'Content-Type':'application/json'
             },
             body: JSON.stringify({
-
                 nombre:nombre.value,
                 descripcion:descripcion.value,
                 precio:precio.value,
@@ -152,3 +151,72 @@ formProducto.addEventListener('submit', (e)=>{
     }
     modalProducto.hide()
 })
+*/
+//=========MUETRA LOS PRODUCTOS===========
+document.addEventListener("DOMContentLoaded", function () {
+    cargarProductos();
+
+    // Función para cargar los productos
+    function cargarProductos() {
+        fetch("mostrar_productos.php")
+            .then(response => response.json())
+            .then(data => {
+                const tbody = document.querySelector("#tablaClientes tbody");
+                tbody.innerHTML = "";
+                data.forEach(producto => {
+                    const tr = document.createElement("tr");
+                    tr.innerHTML = `
+                        <td>${producto.id_producto}</td>
+                        <td>${producto.nombre_producto}</td>
+                        <td>${producto.descripcion}</td>
+                        <td>${producto.precio_unitario}</td>
+                        <td>${producto.stock}</td>
+                        <td>${producto.nombre_proveedor || 'Sin proveedor'}</td>
+                        <td><img src="${producto.imagen}" alt="Imagen" width="50"></td>
+                        <td class="text-center">
+                            <button class="btn btn-warning btn-sm" onclick="editarProducto(${producto.id_producto})">Editar</button>
+                            <button class="btn btn-danger btn-sm" onclick="eliminarProducto(${producto.id_producto})">Eliminar</button>
+                        </td>
+                    `;
+                    tbody.appendChild(tr);
+                });
+            });
+    }
+
+    // Agregar producto
+    document.querySelector("#modalProducto form").addEventListener("submit", function (e) {
+        e.preventDefault();
+        const formData = new FormData(this);
+        fetch("agregar_producto.php", {
+            method: "POST",
+            body: formData,
+        })
+            .then(response => response.text())
+            .then(data => {
+                alertify.success(data);
+                cargarProductos();
+            });
+    });
+
+    // Función para eliminar producto
+    window.eliminarProducto = function (id_producto) {
+        if (confirm("¿Estás seguro de que deseas eliminar este producto?")) {
+            fetch("eliminar_producto.php", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: `id_producto=${id_producto}`,
+            })
+                .then(response => response.text())
+                .then(data => {
+                    alertify.success(data);
+                    cargarProductos();
+                });
+        }
+    };
+
+    // Función para editar producto
+    window.editarProducto = function (id_producto) {
+        // Cargar datos en el modal y actualizar
+        // Implementar fetch a editar_producto.php
+    };
+});
