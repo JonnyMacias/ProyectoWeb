@@ -10,6 +10,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="CSS/estilo_pedidos.css">
     <link rel="stylesheet" href="CSS/estilo_clientes.css">
+    <link rel="stylesheet" href="CSS/estilos_inventario.css">
     <?php
     // Conexión a la base de datos
     $servername = "mano.cjkioe6eoc42.us-east-1.rds.amazonaws.com:3306";
@@ -171,10 +172,8 @@ $database = "edkena";
     </div>
 
 
-
-    <footer style="background-color: black; height: 200px;">
-
-    </footer>
+    <?php include 'CodigoReutilizable/piepagina.php'?>
+ 
 </body>
 
 
