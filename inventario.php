@@ -14,11 +14,11 @@ if (!isset($_SESSION['rol'])) {
 }
 
 // Muestra información del usuario si la sesión está activa
-if (isset($_SESSION['username'])) {
+/*if (isset($_SESSION['username'])) {
     echo "La sesión está activa. Usuario: " . htmlspecialchars($_SESSION['username']);
 } else {
     echo "No hay sesión activa.";
-}
+}*/
 ?>
 
 <!DOCTYPE html>
@@ -40,6 +40,7 @@ if (isset($_SESSION['username'])) {
 
 </head>
 <body>
+
 <?php  include 'CodigoReutilizable/encabezado.php'?>
   <div class="container mt-4 shadow-lg p-3 mb-5 bg-body rounded">
      <button id= "btnCrear" type="button" class="btn btn-primary" data-bs-toggle="modal" >Nuevo Producto</button>

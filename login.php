@@ -14,6 +14,10 @@
             break;
 
             case 3:
+                header('location: index2.php');
+            break;
+
+            case 4:
                 header('location: inventario.php');
             break;
 
