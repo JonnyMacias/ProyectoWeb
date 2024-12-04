@@ -13,6 +13,14 @@
                 header('location: clientes.php');
             break;
 
+            case 3:
+                header('location: index2.php');
+            break;
+
+            case 4:
+                header('location: inventario.php');
+            break;
+
             default:
         }
     }
@@ -53,6 +61,19 @@
                         $_SESSION['username'] = $username; // Guarda el nombre de usuario en la sesión
                         echo "Sesión iniciada correctamente. Usuario: " . $_SESSION['username'];
                         header('location: clientes.php'); // Redirige al home
+                        exit();
+                    } else {
+                        echo "Credenciales inválidas.";
+                    }
+                break;
+
+                case 3:
+                    $username = 'Inventarios';
+                    $usuarioValido = true; // Simulación de validación de credenciales
+                    if ($usuarioValido) {
+                        $_SESSION['username'] = $username; // Guarda el nombre de usuario en la sesión
+                        echo "Sesión iniciada correctamente. Usuario: " . $_SESSION['username'];
+                        header('location: inventario.php'); // Redirige al home
                         exit();
                     } else {
                         echo "Credenciales inválidas.";

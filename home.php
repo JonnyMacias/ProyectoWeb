@@ -33,9 +33,9 @@ include 'db.php';
         <div class="cont-menu active" id="menu">
             <ul>
                 <li><a href="#mis">Misión</a></li>
-                <li><a href="vis">Visión</a></li>
+                <li><a href="#vis">Visión</a></li>
                 <li><a href="#">Valores</a></li>
-                <li><a href="#">Contacto</a></li>
+                <li><a href="#CodigoReutilizable/piepagina.php">Contacto</a></li>
                 <li>
                     <?php if (isset($_SESSION['username'])): ?>
                         <div class="user-info">
@@ -58,7 +58,7 @@ include 'db.php';
         <script src="app.js"></script>
         
         <div class="encabezado-img">
-            <img src="/IMG/LOGO_EDKENA.png">
+            <img src="IMG/Edkena B.png" alt="logo" class="imagen">
             <h1>EDKENA</h1>
             <p>Tu creatividad, nuestras herramientas</p>
         </div><br><br>

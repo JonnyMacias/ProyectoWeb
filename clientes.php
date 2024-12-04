@@ -14,11 +14,11 @@ if (!isset($_SESSION['rol'])) {
 }
 
 // Muestra información del usuario si la sesión está activa
-if (isset($_SESSION['username'])) {
+/*if (isset($_SESSION['username'])) {
     echo "La sesión está activa. Usuario: " . htmlspecialchars($_SESSION['username']);
 } else {
     echo "No hay sesión activa.";
-}
+}*/
 ?>
 
 <!DOCTYPE html>
@@ -28,22 +28,29 @@ if (isset($_SESSION['username'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogo de Clientes</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="CSS/estilo_clientes.css">
+    <link rel="stylesheet" href="CSS/estilos_inventario.css">
 </head>
 
 <body>
     <div class="header">
         <div class="nav-links">
-            <img id="LogoEDKENA" src="IMAGENES/Edkena B.png" alt="LogoEDKENA" width="30">
+            <img id="LogoEDKENA" src="IMG/Edkena B.png" alt="LogoEDKENA" width="30">
             <a href="home.php">Productos</a>
-            <a href="home.php">Misión</a>
-            <a href="home.php">Visión</a>
-            <a href="home.php">Valores</a>
+            <a href="home.php#mis">Misión</a>
+            <a href="home.php#vis">Visión</a>
+            <a href="home.php#">Valores</a>
         </div>
         <div class="user-info">
-            <img src="user-icon.png" alt="User Icon" width="30">
-            <span>Eduardo Ponce</span>
+        <div class="user-info">
+                    <i class='bx bxs-user'></i>
+                    <span><?php echo htmlspecialchars($_SESSION['username']); ?></span> <!-- Muestra el username -->
+                </div>
+            <form action="cerrar_sesion.php" method="POST">
+                <button type="submit">Cerrar sesión</button>
+            </form>
         </div>
     </div>
 
@@ -52,7 +59,7 @@ if (isset($_SESSION['username'])) {
         <div class="search-bar">
             <input type="text" placeholder="Buscar Clientes...">
             <button>🔍</button>
-            <button id="add-client-btn">Agregar Cliente</button>
+            <button id="add-client-btn">+Agregar Cliente</button>
 
         </div>
         <table class="table">
@@ -113,5 +120,7 @@ if (isset($_SESSION['username'])) {
 
     <script src="JS/clientes.js"></script>
 </body>
+        <!--CODIGO PIE DE PAGINA -->
+        <?php include 'CodigoReutilizable/piepagina.php'?>
 
 </html>

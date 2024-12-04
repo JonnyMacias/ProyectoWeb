@@ -46,8 +46,8 @@ nav {
 
 .encabezado-img{
     background-image: url(../IMG/banner_home.jpg);
-    height: 40px;
-    background-size: contain;
+    height: 400px;
+    background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -62,6 +62,10 @@ nav {
 .encabezado-img h1{
     font-size: 50px;
     padding: 20px 0;
+}
+
+.encabezado-img .imagen{
+    width: 150px;
 }
 
 .user-info {
