@@ -8,14 +8,17 @@
     <link rel="stylesheet" href="CSS/estilo_Resumen_V.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="CSS/estilo_home.css">
+    <link rel="stylesheet" href="CSS/estilos_inventario.css">
 
 
     <?php
     // Conexión a la base de datos
-    $servername = "localhost";
-    $username = "root"; // Cambiar según el usuario
-    $password = "3Hermanos"; // Cambiar según la contraseña
-    $database = "app_web"; // Cambiar según el nombre de tu base de datos
+    $servername = "mano.cjkioe6eoc42.us-east-1.rds.amazonaws.com:3306";
+    $username = "root";
+    $password = "3Hermanos*";
+    $database = "edkena";
+    
+
 
     $conn = new mysqli($servername, $username, $password, $database);
 
@@ -82,9 +85,7 @@
 
     </div>
 
-    <footer style="background-color: black; height: 200px;">
-
-    </footer>
+    <?php include 'CodigoReutilizable/piepagina.php'?>
 </body>
 
 <?php
