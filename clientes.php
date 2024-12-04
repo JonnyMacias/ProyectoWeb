@@ -31,6 +31,7 @@ if (!isset($_SESSION['rol'])) {
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="CSS/estilo_clientes.css">
+    <link rel="stylesheet" href="CSS/estilos_inventario.css">
 </head>
 
 <body>
@@ -119,5 +120,7 @@ if (!isset($_SESSION['rol'])) {
 
     <script src="JS/clientes.js"></script>
 </body>
+        <!--CODIGO PIE DE PAGINA -->
+        <?php include 'CodigoReutilizable/piepagina.php'?>
 
 </html>
