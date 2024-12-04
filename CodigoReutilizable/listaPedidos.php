@@ -1,9 +1,11 @@
 <?php
 // Conexión a la base de datos
-$servername = "localhost";
-$username = "root"; // Cambiar según el usuario
-$password = "3Hermanos"; // Cambiar según la contraseña
-$database = "app_web"; // Cambiar según el nombre de tu base de datos
+$servername = "mano.cjkioe6eoc42.us-east-1.rds.amazonaws.com:3306";
+$username = "root";
+$password = "3Hermanos*";
+$database = "edkena";
+
+
 
 $conn = new mysqli($servername, $username, $password, $database);
 
