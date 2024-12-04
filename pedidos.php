@@ -44,13 +44,13 @@ $database = "edkena";
         </div>
     </div>
 
-    <div class="container">
+    <div class="containe_pedidosr">
         <CEnter>
             <BR></BR>
             <h1>REGISTRO DE PEDIDOS</h1>
         </CEnter>
 
-        <div class="conf">
+        <div class="conf_pedidos">
             <form class="search" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="GET">
                 <input type="text" placeholder="BUSACAR PEDIDOS" name="busqueda">
                 <button type="submit"><img src="IMG/buscar.svg" alt=""></button>
@@ -172,11 +172,11 @@ $database = "edkena";
     </div>
 
 
-    <?php include 'CodigoReutilizable/piepagina.php'?>
+   
  
 </body>
 
-
+<?php include 'CodigoReutilizable/piepagina.php'?>
 <script src="JS/script_Pedidos.js"></script>
 
 </html>

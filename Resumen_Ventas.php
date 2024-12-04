@@ -27,9 +27,6 @@
 
 <body>
     <?php include 'CodigoReutilizable/encabezado.php' ?>
-    <nav style=" margin: 0;; padding: 0; background-color: white; width: 100%; height: 100px;">
-
-    </nav>
     <div class="containerRV">
         <div class="contIzquierdo">
             <img src="IMG/Edkena B.png" alt="LOGO">
@@ -84,6 +81,8 @@
         </div>
 
     </div>
+
+    <br><br><br>
 
     <?php include 'CodigoReutilizable/piepagina.php'?>
 </body>
