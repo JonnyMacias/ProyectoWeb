@@ -1,0 +1,318 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #007bff;
+    padding: 10px;
+    color: white;
+    text-align: center;
+
+}
+header nav ul {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+}
+aside {
+    width: 200px;
+    background-color: #e8e8e8;
+    padding: 10px;
+    position: fixed;
+    height: 100%;
+}
+main {
+    margin-left: 220px;
+    padding: 20px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+button {
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+}
+
+/* Estilo del botón de Misión */
+.mission-button-container {
+    margin-top: 20px;
+    text-align: center;
+}
+.mission-button {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+.mission-button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo del contenedor del encabezado del menú */
+.menu-header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    gap: 10px;
+
+    justify-content: center;
+}
+/* Estilo del texto HOME */
+.menu-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+/* Estilo del botón de menú (hamburger) */
+.hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+    transition: transform 0.3s;
+}
+/* Estilo de las líneas del hamburger menu */
+.hamburger-menu .line {
+    width: 100%;
+    height: 4px;
+    background-color: white;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+/* Estilo para cuando el menú está abierto (transforma las líneas en "X") */
+.hamburger-menu.open .line:nth-child(1) {
+    transform: rotate(45deg);
+    position: relative;
+    top: 7px;
+}
+.hamburger-menu.open .line:nth-child(2) {
+    opacity: 0;
+}
+.hamburger-menu.open .line:nth-child(3) {
+    transform: rotate(-45deg);
+    position: relative;
+    bottom: 7px;
+}
+/* Estilo del menú desplegable */
+.menu-drawer {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Oculto inicialmente */
+    width: 250px;
+    height: 100%;
+    background-color: #007bff;
+    color: white;
+    padding-top: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 1000;
+}
+.menu-drawer .menu-item {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+.menu-drawer .menu-item:hover {
+    background-color: #0056b3;
+}
+/* Estilo del botón "Cerrar" */
+.close-menu {
+    background-color: white;
+    color: #007bff;
+    border: none;
+    padding: 10px;
+    margin: 20px auto;
+    width: 80%;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+.close-menu:hover {
+    background-color: #0056b3;
+    color: white;
+}
+/* Mostrar el menú cuando está activo */
+.menu-drawer.open {
+    left: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* Estilos del formulario */
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button.submit-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+button.submit-btn:hover {
+    background-color: #0056b3;
+}
+
+/*ESTILOS PARA BARRA DE BUSQUEDA DE PROVEEDORES*/
+.search-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    background-color: #0056b3;
+}
+
+/*BOTON DE CANCELAR*/
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.cancel-btn {
+    display: inline-block;
+    background-color: #f4f4f4;
+    color: #333;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.cancel-btn:hover {
+    background-color: #ddd;
+    color: #000;
+}
+
+/*AGREGAR BOTON DE USUARIO*/
+.user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-icon {
+    width: 40px; /* Puedes ajustar el tamaño */
+    height: 40px;
+    border-radius: 50%; /* Hace que la imagen sea circular */
+    border: 2px solid white; /* Puedes poner un borde blanco alrededor de la imagen */
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.user-icon:hover {
+    transform: scale(1.1); /* Aumenta un poco el tamaño al hacer hover */
+}
+/*BOTON DE BORRAR*/
+.icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.icon:hover {
+    opacity: 0.7;
+}
+/*AGREGAR PROVEEDOR*/
+.add-provider-button {
+    margin-left: auto;  /* Alineación a la derecha */
+    margin-top: 10px;
+}
+
+.add-provider-button a {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.add-provider-button a:hover {
+    background-color: #0056b3;
+}
