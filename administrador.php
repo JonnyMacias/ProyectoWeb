@@ -33,9 +33,8 @@
         <div class="cont-menu active" id="menu">
             <ul>
                 <li><a href="clientes.php">Clientes</a></li>
-                <li><a href="inventario.php">inventarios</a></li>
-                <li><a href="#">Valores</a></li>
-                <li><a href="#">Contacto</a></li>
+                <li><a href="index2.php">Proveedores</a></li>
+                <li><a href="inventario.php">Inventarios</a></li>
                 <li>
                     <?php if (isset($_SESSION['username'])): ?>
                         <div class="user-info">

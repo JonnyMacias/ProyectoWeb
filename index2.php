@@ -1,4 +1,6 @@
 <?php
+
+include 'db.php';
 session_start();
 
 // Verifica si la sesión está activa
@@ -37,6 +39,7 @@ if ($conn->connect_error) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogo de Proveedores</title>
     <link rel="stylesheet" href="styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
     <div class="container">
@@ -47,14 +50,19 @@ if ($conn->connect_error) {
                     <li><a href="home.php" class="mission-button">Productos</a></li>
                     <li><a href="home.php#mis" class="mission-button">Misión</a></li>
                     <li><a href="home.php#vis" class="mission-button">Visión</a></li>
-                    <li><a href="home.php" class="mission-button">Valores</a></li>
+                    <li><a href="home.php#val" class="mission-button">Valores</a></li>
                 </ul>
             </nav>
             <div class="user">
                 <!-- Aquí va el icono de usuario -->
-                <a href="login.php">
-                    <img src="user-icon.png" alt="Iniciar sesión" class="user-icon">
-                </a>
+                <i class='bx bxs-user'></i>
+                <span><?php echo htmlspecialchars($_SESSION['username']); ?></span> <!-- Muestra el username -->
+                <form action="cerrar_sesion.php" method="POST">
+                    <button type="submit">Cerrar sesión</button>
+                </form>
+            </div>
+
+                
             </div>
             
         </header>
