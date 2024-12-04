@@ -1,9 +1,25 @@
 <?php
+session_start();
+
+// Verifica si la sesión está activa
+if (!isset($_SESSION['rol'])) {
+    header('location: login.php');
+    exit();
+} else {
+    // Permite acceso solo si el rol es 1 (Administrador) o 2 (Cliente)
+    if ($_SESSION['rol'] != 1 && $_SESSION['rol'] != 3) {
+        header('location: login.php');
+        exit();
+    }
+}
+?>
+
+<?php
 // Conexión a la base de datos
 $servername = "localhost";
 $username = "root";  // Usuario de MySQL (por defecto en XAMPP es root)
 $password = "";  // Contraseña de MySQL (por defecto en XAMPP es vacío)
-$dbname = "pro_web";  // Cambia esto por el nombre de tu base de datos
+$dbname = "edkena";  // Cambia esto por el nombre de tu base de datos
 
 // Crear la conexión
 $conn = new mysqli($servername, $username, $password, $dbname);
