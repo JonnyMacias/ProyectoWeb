@@ -33,7 +33,7 @@
         <div class="cont-menu active" id="menu">
             <ul>
                 <li><a href="clientes.php">Clientes</a></li>
-                <li><a href="#vis">Visión</a></li>
+                <li><a href="inventario.php">inventarios</a></li>
                 <li><a href="#">Valores</a></li>
                 <li><a href="#">Contacto</a></li>
                 <li>
