@@ -38,9 +38,9 @@ if (!isset($_SESSION['rol'])) {
         <div class="nav-links">
             <img id="LogoEDKENA" src="IMG/Edkena B.png" alt="LogoEDKENA" width="30">
             <a href="home.php">Productos</a>
-            <a href="home.php">Misión</a>
-            <a href="home.php">Visión</a>
-            <a href="home.php">Valores</a>
+            <a href="home.php#mis">Misión</a>
+            <a href="home.php#vis">Visión</a>
+            <a href="home.php#">Valores</a>
         </div>
         <div class="user-info">
         <div class="user-info">
@@ -58,7 +58,7 @@ if (!isset($_SESSION['rol'])) {
         <div class="search-bar">
             <input type="text" placeholder="Buscar Clientes...">
             <button>🔍</button>
-            <button id="add-client-btn">Agregar Cliente</button>
+            <button id="add-client-btn">+Agregar Cliente</button>
 
         </div>
         <table class="table">
