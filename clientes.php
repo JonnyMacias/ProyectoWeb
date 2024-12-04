@@ -31,6 +31,7 @@ if (!isset($_SESSION['rol'])) {
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="CSS/estilo_clientes.css">
+    <link rel="stylesheet" href="CSS/estilos_inventario.css">
 </head>
 
 <body>
@@ -38,9 +39,9 @@ if (!isset($_SESSION['rol'])) {
         <div class="nav-links">
             <img id="LogoEDKENA" src="IMG/Edkena B.png" alt="LogoEDKENA" width="30">
             <a href="home.php">Productos</a>
-            <a href="home.php">Misión</a>
-            <a href="home.php">Visión</a>
-            <a href="home.php">Valores</a>
+            <a href="home.php#mis">Misión</a>
+            <a href="home.php#vis">Visión</a>
+            <a href="home.php#">Valores</a>
         </div>
         <div class="user-info">
         <div class="user-info">
@@ -58,7 +59,7 @@ if (!isset($_SESSION['rol'])) {
         <div class="search-bar">
             <input type="text" placeholder="Buscar Clientes...">
             <button>🔍</button>
-            <button id="add-client-btn">Agregar Cliente</button>
+            <button id="add-client-btn">+Agregar Cliente</button>
 
         </div>
         <table class="table">
@@ -119,5 +120,7 @@ if (!isset($_SESSION['rol'])) {
 
     <script src="JS/clientes.js"></script>
 </body>
+        <!--CODIGO PIE DE PAGINA -->
+        <?php include 'CodigoReutilizable/piepagina.php'?>
 
 </html>

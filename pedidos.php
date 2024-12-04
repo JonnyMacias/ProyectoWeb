@@ -1,4 +1,6 @@
+
 <!DOCTYPE html>
+
 <html lang="en">
 
 
@@ -7,13 +9,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="CSS/estilo_pedidos.css">
-
+    <link rel="stylesheet" href="CSS/estilo_clientes.css">
+    <link rel="stylesheet" href="CSS/estilos_inventario.css">
     <?php
     // Conexión a la base de datos
-    $servername = "localhost";
-    $username = "root"; // Cambiar según el usuario
-    $password = "3Hermanos"; // Cambiar según la contraseña
-    $database = "app_web"; // Cambiar según el nombre de tu base de datos
+    $servername = "mano.cjkioe6eoc42.us-east-1.rds.amazonaws.com:3306";
+$username = "root";
+$password = "3Hermanos*";
+$database = "edkena";
+
 
     $conn = new mysqli($servername, $username, $password, $database);
 
@@ -21,17 +25,32 @@
 </head>
 
 <body>
-    <nav style=" margin: 0;; padding: 0; background-color: rgb(0, 162, 255); width: 100%; height: 100px;">
+<div class="header">
+        <div class="nav-links">
+            <img id="LogoEDKENA" src="IMG/Edkena B.png" alt="LogoEDKENA" width="30">
+            <a href="home.php">Productos</a>
+            <a href="home.php">Misión</a>
+            <a href="home.php">Visión</a>
+            <a href="home.php">Valores</a>
+        </div>
+        <div class="user-info">
+        <div class="user-info">
+                    <i class='bx bxs-user'></i>
+                    <span><?php echo htmlspecialchars($_SESSION['username']); ?></span> <!-- Muestra el username -->
+                </div>
+            <form action="cerrar_sesion.php" method="POST">
+                <button type="submit">Cerrar sesión</button>
+            </form>
+        </div>
+    </div>
 
-    </nav>
-
-    <div class="container">
+    <div class="containe_pedidosr">
         <CEnter>
             <BR></BR>
             <h1>REGISTRO DE PEDIDOS</h1>
         </CEnter>
 
-        <div class="conf">
+        <div class="conf_pedidos">
             <form class="search" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="GET">
                 <input type="text" placeholder="BUSACAR PEDIDOS" name="busqueda">
                 <button type="submit"><img src="IMG/buscar.svg" alt=""></button>
@@ -84,7 +103,7 @@
                     ?>
                 </table>
 
-                <div id="panelDetalle" style="display:none; display:flex; flex-direction: column;">
+                <div id="panelDetalle" style="display:none;">
                     <br><br>
                     <h3>Detalles de la Venta</h3>
                     <br><br>
@@ -153,13 +172,11 @@
     </div>
 
 
-
-    <footer style="background-color: black; height: 200px;">
-
-    </footer>
+   
+ 
 </body>
 
-
+<?php include 'CodigoReutilizable/piepagina.php'?>
 <script src="JS/script_Pedidos.js"></script>
 
 </html>
