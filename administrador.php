@@ -35,6 +35,8 @@
                 <li><a href="clientes.php">Clientes</a></li>
                 <li><a href="index2.php">Proveedores</a></li>
                 <li><a href="inventario.php">Inventarios</a></li>
+                <li><a href="pedidos.php">Pedidos</a></li>
+                <li><a href="Resumen_Ventas.php">Resumen Ventas</a></li>
                 <li>
                     <?php if (isset($_SESSION['username'])): ?>
                         <div class="user-info">
