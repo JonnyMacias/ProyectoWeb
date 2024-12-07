@@ -9,8 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="CSS/estilo_pedidos.css">
-    <link rel="stylesheet" href="CSS/estilo_clientes.css">
-    <link rel="stylesheet" href="CSS/estilos_inventario.css">
+    <link rel="stylesheet" href="CSS/estilo_home.css">
     <?php
     // Conexión a la base de datos
     $servername = "mano.cjkioe6eoc42.us-east-1.rds.amazonaws.com:3306";
@@ -25,24 +24,10 @@ $database = "edkena";
 </head>
 
 <body>
+
 <div class="header">
-        <div class="nav-links">
-            <img id="LogoEDKENA" src="IMG/Edkena B.png" alt="LogoEDKENA" width="30">
-            <a href="home.php">Productos</a>
-            <a href="home.php">Misión</a>
-            <a href="home.php">Visión</a>
-            <a href="home.php">Valores</a>
-        </div>
-        <div class="user-info">
-        <div class="user-info">
-                    <i class='bx bxs-user'></i>
-                    <span><?php echo htmlspecialchars($_SESSION['username']); ?></span> <!-- Muestra el username -->
-                </div>
-            <form action="cerrar_sesion.php" method="POST">
-                <button type="submit">Cerrar sesión</button>
-            </form>
-        </div>
-    </div>
+       
+<?php include 'CodigoReutilizable/encabezado.php' ?>
 
     <div class="containe_pedidosr">
         <CEnter>
@@ -171,12 +156,9 @@ $database = "edkena";
         </div>
     </div>
 
-
-   
- 
 </body>
 
-<?php include 'CodigoReutilizable/piepagina.php'?>
+
 <script src="JS/script_Pedidos.js"></script>
 
 </html>
