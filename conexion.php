@@ -1,8 +1,8 @@
 <?php
 // Datos de conexión
-$host = "localhost";
+$host = "mano.cjkioe6eoc42.us-east-1.rds.amazonaws.com:3306";
 $user = "root"; // Usuario de MySQL (por defecto en XAMPP)
-$password = ""; // Contraseña (por defecto en XAMPP está vacía)
+$password = "3Hermanos*"; // Contraseña (por defecto en XAMPP está vacía)
 $dbname = "edkena";
 
 // Crear conexión
