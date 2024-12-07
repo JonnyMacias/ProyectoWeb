@@ -9,10 +9,10 @@ class Database{
     private $charset;
 
     public function __construct(){
-        $this->host = 'localhost';
+        $this->host = 'mano.cjkioe6eoc42.us-east-1.rds.amazonaws.com:3306';
         $this->db = 'edkena';
         $this->user = 'root';
-        $this->password = '';
+        $this->password = '3Hermanos*';
         $this->charset = 'utf8mb4';
     }
 

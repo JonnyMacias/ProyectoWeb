@@ -49,7 +49,7 @@ if (!isset($_SESSION['rol'])) {
                     <span><?php echo htmlspecialchars($_SESSION['username']); ?></span> <!-- Muestra el username -->
                 </div>
             <form action="cerrar_sesion.php" method="POST">
-                <button type="submit">Cerrar sesión</button>
+                <button class="cerrar" type="submit">Cerrar sesión</button>
             </form>
         </div>
     </div>
